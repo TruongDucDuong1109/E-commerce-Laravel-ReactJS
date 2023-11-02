@@ -1,0 +1,20 @@
+h1 {
+    color: rgb(177, 157, 157);
+}
+.wrapper {
+    width: 90%;
+    min-height: 100vh;
+    // background-color: aquamarine;
+    margin: 0 auto;
+    
+}
+section {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    align-content: center;
+}
+
+#image {
+    margin-top: 76px;
+}
