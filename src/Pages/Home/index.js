@@ -1,7 +1,7 @@
 import styles from "./Home.scss";
 import classNames from "classnames/bind";
 import img1 from "../../Assets/banner.jpg";
-// import img2 from "../../Assets/img-slide-1.jpg";
+import img2 from "../../Assets/img-slide-1.jpg";
 // import img3 from "../../Assets/img-slide-2.jpg";
 // import img4 from "../../Assets/img-slide-3.jpg";
 // import img5 from "../../Assets/img-slide-4.jpg";
@@ -15,8 +15,10 @@ function Home() {
         <figure className={cx("banner")}>
           <img src={img1} alt="banner" id={cx("image")} />
         </figure>
-        <p className={cx("banner-text")}>D2 HORSEBIT 1995 IN DEMETRA</p>
-        <button className={cx("btn-banner-discover")}>SHOP NOW</button>
+        <div className={cx("text-fixed")}>
+          <span className={cx("banner-text")}>D2 HORSEBIT 1995 IN DEMETRA</span>
+          <button className={cx("btn-banner-discover")}>SHOP NOW</button>
+        </div>
       </section>
       <section>
         <div id={cx("slider")}>
@@ -73,7 +75,19 @@ function Home() {
         </div>
       </section>
       <section>
-        <h1>HomePage</h1>
+        <div className={cx("section2")}>
+          <aside className={cx("aside-1")}>
+            <figure className={cx("banner")}>
+              <img src={img2} alt="banner" id={cx("img-section2")}/>
+            </figure>
+          </aside>
+          <aside className={cx("aside-2")}>
+            <span className={cx("banner-text-section2")}>D2 HORSEBIT 1995 IN DEMETRA</span>
+            <span className={cx("text-banner")}>Billie Eilish presents the first Gucci bag ever to be crafted in Demetra</span>
+            <a href="/"><span id = {cx("discover-more")}>DISCOVER MORE</span></a>
+            <hr  id={cx("thread1")} className={cx("hr-animation")}/>
+          </aside>
+        </div>
       </section>
       <section>
         <h1>HomePage</h1>
