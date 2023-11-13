@@ -1,19 +1,18 @@
 import styles from "./Home.scss";
 import classNames from "classnames/bind";
-import img1 from "../../Assets/banner.jpg";
+// import img1 from "../../Assets/banner.jpg";
 import img2 from "../../Assets/img-slide-1.jpg";
-// import img3 from "../../Assets/img-slide-2.jpg";
+import img3 from "../../Assets/imgfull-1.jpg";
 // import img4 from "../../Assets/img-slide-3.jpg";
 // import img5 from "../../Assets/img-slide-4.jpg";
 
 const cx = classNames.bind(styles);
-
 function Home() {
   return (
     <article className={cx("wrapper")}>
       <section>
         <figure className={cx("banner")}>
-          <img src={img1} alt="banner" id={cx("image")} />
+          <img src={img3} alt="banner" id={cx("image")} />
         </figure>
         <div className={cx("text-fixed")}>
           <span className={cx("banner-text")}>D2 HORSEBIT 1995 IN DEMETRA</span>
@@ -29,7 +28,7 @@ function Home() {
           <div id={cx("slides")}>
             <div id={cx("overflow")}>
               <div className={cx("inner")}>
-                <div class={cx("slide slide_1")}>
+                <div className={cx("slide slide_1")}>
                   <div className={cx("slide-content")}>
                     {/* <figure>
                       <img src={img2} alt="slider" />
@@ -78,19 +77,49 @@ function Home() {
         <div className={cx("section2")}>
           <aside className={cx("aside-1")}>
             <figure className={cx("banner")}>
-              <img src={img2} alt="banner" id={cx("img-section2")}/>
+              <img src={img2} alt="banner" id={cx("img-section2")} />
             </figure>
           </aside>
           <aside className={cx("aside-2")}>
             <span className={cx("banner-text-section2")}>D2 HORSEBIT 1995 IN DEMETRA</span>
-            <span className={cx("text-banner")}>Billie Eilish presents the first Gucci bag ever to be crafted in Demetra</span>
-            <a href="/"><span id = {cx("discover-more")}>DISCOVER MORE</span></a>
-            <hr  id={cx("thread1")} className={cx("hr-animation")}/>
+            <span className={cx("text-banner")}>
+              Billie Eilish presents the first Gucci bag ever to be crafted in Demetra
+            </span>
+            <a href="/">
+              <span id={cx("discover-more")}>DISCOVER MORE</span>
+            </a>
+            <hr id={cx("thread1")} className={cx("hr-animation")} />
           </aside>
         </div>
       </section>
       <section>
-        <h1>HomePage</h1>
+        {/* <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="#">
+                Action
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                Another action
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                Something else here
+              </a>
+            </li>
+          </ul>
+        </div> */}
       </section>
     </article>
   );

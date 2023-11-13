@@ -1,6 +1,7 @@
+import { Fragment } from "react";
 function Sidebar() {
     return ( 
-        <h2>Sidebar</h2>
+        <Fragment></Fragment>
      );
 }
 
