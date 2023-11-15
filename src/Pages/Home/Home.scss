@@ -5,7 +5,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.wrapper {
+.wrapper-home {
   //   width: 90%;
   min-height: 100vh;
   margin: 0 auto;
@@ -64,9 +64,10 @@ section {
 
 #slider {
   margin: 0 auto;
-  width: 1488px;
+  width: 1520px;
   max-width: 100%;
   text-align: center;
+  overflow: hidden;
   z-index: 1;
 }
 #slider input[type="radio"] {
@@ -83,7 +84,8 @@ section {
   position: relative;
   z-index: 1;
   margin-top: 50px;
-  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
 }
 #overflow {
   width: 100%;
@@ -106,9 +108,11 @@ section {
   width: 400%;
   line-height: 0;
   height: 837px;
+  display: flex;
 }
 #slides .slide {
   width: 25%;
+  flex: 1;
   float: left;
   display: flex;
   justify-content: center;

@@ -3,6 +3,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: #444444;
+
 }
 
 a,
@@ -11,12 +12,9 @@ a:hover {
   color: inherit;
 }
 
-.section-products {
-  padding: 80px 0 54px;
-}
-
 .section-products .header {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
+  margin-top: 20px;
 }
 
 .section-products .header h3 {
@@ -30,9 +28,11 @@ a:hover {
   font-weight: 400;
   color: #444444;
 }
+.product-banner {
+  width: 1520px;
+  width: 100%;
+}
+.section-products {
+  padding: 0 !important; 
 
-
-
-
-
-
+}

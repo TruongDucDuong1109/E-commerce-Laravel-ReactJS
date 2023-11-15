@@ -4,7 +4,7 @@ import Upload from "../Pages/Upload";
 import {HeaderOnly} from "../Components/Layout";
 
 const publicRoutes = [
-    {path: "/", component: Home, layout : HeaderOnly},
+    {path: "/", component: Home,},
     {path: "product", component: Product, },
     {path: "upload", component: Upload, layout : HeaderOnly }
     

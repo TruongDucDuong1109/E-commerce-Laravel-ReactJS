@@ -12,12 +12,13 @@ a:hover {
 }
 
 
-.section-products {
-  padding: 40px 0 54px;
-}
+
 
 .section-products .single-product {
   margin-bottom: 26px;
+  max-width: 300px;
+  width: 100%;
+  
 }
 
 .section-products .single-product .part-1 {
@@ -78,6 +79,7 @@ a:hover {
 .section-products #product-8 .part-1::before {
   background: url("../../../../Assets/imgfull-4.jpg") no-repeat center;
   background-size: cover;
+  
 }
 
 .section-products .single-product .part-1 .discount,
@@ -123,7 +125,6 @@ a:hover {
   width: 40px;
   height: 40px;
   line-height: 40px;
-//   background-color: #ffffff;
   color: #ffffff;
   text-align: center;
   box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
@@ -162,3 +163,6 @@ a:hover {
   background-color: #444444;
   transform: translateY(-50%);
 }
+
+
+

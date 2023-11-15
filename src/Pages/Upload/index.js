@@ -1,9 +1,11 @@
-function Upload() {
-    return ( 
-        <div>
-            <h2>upload</h2>
-        </div>
-     );
+import styles from "./ProductDetail.scss";
+import classNames from "classnames/bind";
+const cx = classNames.bind(styles);
+
+function ProductDetail() {
+  return (
+    <div className={cx("wrapper-productDetails")}><h2>ProductDetail</h2></div>
+  );
 }
 
-export default Upload;
+export default ProductDetail;

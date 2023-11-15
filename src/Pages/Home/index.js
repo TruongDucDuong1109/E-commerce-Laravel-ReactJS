@@ -1,4 +1,5 @@
 import styles from "./Home.scss";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames/bind";
 // import img1 from "../../Assets/banner.jpg";
 import img2 from "../../Assets/img-slide-1.jpg";
@@ -8,8 +9,19 @@ import img3 from "../../Assets/imgfull-1.jpg";
 
 const cx = classNames.bind(styles);
 function Home() {
+  const [currentSlide, setCurrentSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextSlide = currentSlide < 4 ? currentSlide + 1 : 1;
+      document.getElementById(`slide${nextSlide}`).checked = true;
+      setCurrentSlide(nextSlide);
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
   return (
-    <article className={cx("wrapper")}>
+    <article className={cx("wrapper-home")}>
       <section>
         <figure className={cx("banner")}>
           <img src={img3} alt="banner" id={cx("image")} />
@@ -91,35 +103,6 @@ function Home() {
             <hr id={cx("thread1")} className={cx("hr-animation")} />
           </aside>
         </div>
-      </section>
-      <section>
-        {/* <div class="dropdown">
-          <button
-            class="btn btn-secondary dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Dropdown button
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="#">
-                Action
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">
-                Another action
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">
-                Something else here
-              </a>
-            </li>
-          </ul>
-        </div> */}
       </section>
     </article>
   );

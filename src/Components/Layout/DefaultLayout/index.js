@@ -1,7 +1,7 @@
 import Header from "../components/Header/index";
 import Sidebar from "./Sidebar";
-
-function DefaultLayout({children}) {
+import Footer from "./Footer";
+function DefaultLayout({ children }) {
   return (
     <div>
       <Header />
@@ -9,6 +9,7 @@ function DefaultLayout({children}) {
         <Sidebar />
         <div className="content">{children}</div>
       </div>
+      <Footer />
     </div>
   );
 }
