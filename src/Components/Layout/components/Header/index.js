@@ -29,13 +29,13 @@ function Header() {
       <div className={cx("header-content")}>
         <ul className={cx("icon-header")}>
           <li>
-            <a href="product">
+            <a href="/menu">
               <i className={cx("bi bi-list" , "icon",{ toggleTextHeader: scrolled })}></i>
               <span className={cx("text-icon",{ toggleTextHeader: scrolled })}>Menu</span>
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="#">
               <i className={cx("bi bi-search" , "icon",{ toggleTextHeader: scrolled })}></i>
               <span className={cx("text-icon" , { toggleTextHeader: scrolled })}>Search</span>
             </a>

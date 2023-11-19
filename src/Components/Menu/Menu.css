@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+.menu {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 88%, rgba(203, 203, 204, 1) 100%);
+}
+
+.container__class{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+li {
+    list-style: none;
+}
+
+li i{
+    margin-right: 10px;
+}
+
+/* 
+
+
+LEFT ASIDE 
+
+*/
+.left__aside {
+    margin: 80px 0px 0px 30px;
+    float: left;
+    width: 400px; 
+    border-right: 1px solid rgba(190, 190, 187, 0.92);
+}
+
+.link__name{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.link__name a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+}
+.Personal {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.Personal p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.avatar {
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.list a {
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    display: block;
+    list-style: none;
+    
+}
+.account a{
+   font-size: 12px;
+}
+
+.account {
+    margin: 10px;
+}
+
+.account li {
+    margin-bottom: 10px;
+    width: 80%;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* 
+
+Hover effect on links 
+
+*/
+.list a,
+.Manage-account a,
+.account li a,
+.information a,
+.link__name a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding: 7px;
+}
+
+.list a::before,
+.Manage-account a::before,
+.account li a::before,
+.information a::before,
+.link__name a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.list a:hover::before,
+.Manage-account a:hover::before,
+.account li a:hover::before,
+.information a:hover::before,
+.link__name a:hover::before {
+    width: 100%;
+}
+
+
+/* 
+
+MIDDLE SECTION 
+
+*/
+
+.middle__section{
+   margin: 80px;
+}
+
+.order__history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title__1{
+    border: 1px solid rgba(190, 190, 187, 0.92);
+    background-color: rgba(195, 187, 191, 0.8);
+    padding: 15px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+}
+
+.order__description
+ {
+    border: 1px solid rgb(206, 190, 190);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    height: 100px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 
+
+RIGHT ASIDE 
+
+*/
+
+.right__aside {
+    float: right;
+    width: 400px; 
+    margin-top: 80px;
+}
+
+.Core{
+    margin: 30px
+}
+
+.money__avatar {
+    background-color: rgb(129, 113, 113);
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 10px;
+}
+
+.title__2{
+    border: 1px solid rgba(190, 190, 187, 0.92);
+    background-color: rgba(195, 187, 191, 0.8);
+    padding: 15px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+}
+.title__3{
+    border: 1px solid rgba(190, 190, 187, 0.92);
+    background-color: rgba(195, 187, 191, 0.8);
+    padding: 15px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+}
+
+.rewards__available {
+    border: 1px solid  rgba(190, 190, 187, 0.92);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 30px;
+}
+
+.reward__description {
+    border: 1px solid rgba(190, 190, 187, 0.92);
+    width: 500px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.reward__description p {
+    margin-left: 30px;
+}
+
+.rewards__available p {
+    margin-left: 0px;
+}
+
+.CreditCard{
+    margin-top: 30px;
+}
+
+.creditcard__description {
+    border: 1px solid  rgba(190, 190, 187, 0.92);
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 
+
+
+MAIL BUTTON 
+
+*/
+
+.mail__btn {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #242424;
+    color: white;
+    position: fixed;
+    bottom: 32px;
+    right: 40px;
+    z-index: 100;
+    box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 0.28);
+}
+
+.click{
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.click:hover{
+    transform: scale(1.1);
+}
