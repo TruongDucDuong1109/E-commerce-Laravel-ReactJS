@@ -1,0 +1,43 @@
+.wrapper_search {
+  position: fixed;
+  background-color: white;
+  border-radius: 5px;
+  min-height: 300px;
+  width: 500px;
+  top: 60px;
+  z-index: 1001;
+  overflow-y: auto;
+  
+}
+.search_form {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.btn_close {
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+}
+
+.search_content {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  width: 90%;
+  color: black;
+}
+.search_content:hover {
+  color: #c44b4b;
+  
+}
+
+.item1 {
+  width: 50%;
+}
+
+.item2 {
+  width: 100px;
+  height: 100px
+}

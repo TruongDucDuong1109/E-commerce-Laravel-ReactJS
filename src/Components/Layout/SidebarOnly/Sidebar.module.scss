@@ -1,0 +1,18 @@
+.Container {
+        float: left;
+        width: 100%;
+}
+
+.sidebar {
+    float: left;
+    width: 13%;
+    min-height: 100vh;
+    height: 100%;
+  }
+
+.content {
+  float: left;
+  background-color: cadetblue;
+  min-height: 100vh;
+  width: 87%;
+}

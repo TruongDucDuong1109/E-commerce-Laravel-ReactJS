@@ -1,0 +1,39 @@
+.footer {
+    width: 100%;
+    background-color: black;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-1 {
+    margin-top: 20px;
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+
+    margin-bottom: 30px;
+}
+#icon-footer {
+    color: white;
+    font-size: 3rem;
+    // border: solid 2px aqua;
+    // padding: 4px 18px;
+    // border-radius: 100%;
+
+}
+
+.footer p {
+    color: white;
+}
+
+.footer span {
+    color: aqua;
+    
+}
+
+.footer-logo-text {
+    font-size: 220px;
+    color: rgb(255, 255, 255);
+}

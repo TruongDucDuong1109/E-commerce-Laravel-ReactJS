@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./Product.scss";
 
 import classNames from "classnames/bind";
-import Card from "../../Components/Layout/components/Card/Card";
+import CardProduct from "../../Components/Layout/components/Card/Card";
 import imgBanner from "../../Assets/banner1.jpg";
 
 const cx = classNames.bind(styles);
@@ -30,17 +30,10 @@ function Product() {
                 </div>
               </div>
             </div>
-            <Card />
-            <div className="row justify-content-center text-center mt-5">
-              <div className="col-md-8 col-lg-6">
-                <div className={cx("header")}>
-                  <h3>Featured Product</h3>
-                  <h2>Popular Products</h2>
-                </div>
-              </div>
-            </div>
+            <div class="row">
+               <CardProduct />
           </div>
-          <Card />
+          </div>
         </div>
       </section>
     </div>

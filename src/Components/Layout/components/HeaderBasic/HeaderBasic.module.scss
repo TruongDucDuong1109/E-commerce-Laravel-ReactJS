@@ -4,24 +4,9 @@
   height: 77px;
   position: fixed;
   overflow: hidden;
+  background-color: rgb(254, 255, 255);
   z-index: 1000;
 }
-.text-icon.toggleTextHeader {
-  color: black;
-}
-.text_logo.toggleTextHeader {
-  color: black;
-}
-.icon.toggleTextHeader {
-   color: black;
-}
-.wrapper.toggleHeader {
-  background-color: white;
-  transition: transform 0.3s, background-color 0.3s, color 0.3s;
-  transition: all 0.3s ease-in-out;
-  color: black;
-}
-
 
 * {
   margin: 0;
@@ -42,7 +27,7 @@
 .text_logo {
   font-size: 35px;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: black;
   display: flex;
   align-items: center;
   display: flex;
@@ -52,7 +37,8 @@
 .text-icon {
   font-size: 15px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: black;
+
 }
 
 ul {
@@ -84,19 +70,7 @@ li {
 }
 .icon {
   font-size: 22px;
-  color: rgb(255, 255, 255);
+  color: black;
+
   margin-right: 12px;
-}
-
-.search_form {
-  width: 200px !important
-}
-
-.span_search {
-  width: 200px;
-
-}
-
-.wrapper_search {
-  z-index: 10000;
 }

@@ -1,281 +1,49 @@
 import styles from "./Card.scss";
-import classNameNames from "classnames/bind";
-import { Fragment } from "react";
+import classNames from "classnames/bind";
+import { Fragment, useEffect, useState } from "react";
+import http from "../../../../http";
+// import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
 
-const cx = classNameNames.bind(styles);
+const cx = classNames.bind(styles);
 
-function Card() {
+function CardProduct() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getproducts = () =>{
+      fetch("http://127.0.0.1:8000/api/products")
+      .then((res) => {return res.json()})
+      .then(response => {
+        setProducts(response.products);
+      })
+      .catch(error => console.log(error));
+
+    }
+    getproducts();
+  }, []);
+
   return (
     <Fragment>
-      <section class="section-products">
-        <div class= {cx("container")}>
-          <div class="row justify-content-center text-center">
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-lg-4 col-xl-3">
-              <div id="product-1" class="single-product">
-                <div class="part-1">
-                  <ul>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-cart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-heart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-arrows-angle-expand"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">Here Product Title</h3>
-                  <h4 class="product-old-price">$79.99</h4>
-                  <h4 class="product-price">$49.99</h4>
-                </div>
+      <section className="section-products">
+        <div className={cx("container")}>
+          <div className="row justify-content-center text-center">
+            {products.map((product, index) => (
+              <div key={index} className="col-md-6 col-lg-4 col-xl-3">
+                <Card className="Card_product">
+                  <Card.Img variant="top" src={`http://127.0.0.1:8000/storage/${product.image}`} height={400} width={320}/>
+                  <Card.Body className="Card_body">
+                    <Card.Title style={{fontSize: 16, fontWeight: 400}}>{product.name}</Card.Title>
+                    <Card.Text className="Card_text">{product.price}$</Card.Text>
+                    <Link to={`/productdetail/${product.id}`} className="btn btn-success mx-2">
+                        Details
+                      </Link>
+                  </Card.Body>
+                </Card>
+
               </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-              <div id="product-2" class="single-product">
-                <div class="part-1">
-                  <span class="discount">15% off</span>
-                  <ul>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-cart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-heart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-arrows-angle-expand"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">Here Product Title</h3>
-                  <h4 class="product-price">$49.99</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-              <div id="product-3" class="single-product">
-                <div class="part-1">
-                  <ul>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-cart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-heart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-arrows-angle-expand"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">Here Product Title</h3>
-                  <h4 class="product-old-price">$79.99</h4>
-                  <h4 class="product-price">$49.99</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-              <div id="product-4" class="single-product">
-                <div class="part-1">
-                  <span class="new">new</span>
-                  <ul>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-cart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-heart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-arrows-angle-expand"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">Here Product Title</h3>
-                  <h4 class="product-price">$49.99</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-              <div id="product-5" class="single-product">
-                <div class="part-1">
-                  <ul>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-cart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-heart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-arrows-angle-expand"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">Here Product Title</h3>
-                  <h4 class="product-old-price">$79.99</h4>
-                  <h4 class="product-price">$49.99</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-              <div id="product-6" class="single-product">
-                <div class="part-1">
-                  <span class="discount">15% off</span>
-                  <ul>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-cart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-heart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-arrows-angle-expand"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">Here Product Title</h3>
-                  <h4 class="product-price">$49.99</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-              <div id="product-7" class="single-product">
-                <div class="part-1">
-                  <ul>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-cart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-heart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-arrows-angle-expand"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">Here Product Title</h3>
-                  <h4 class="product-old-price">$79.99</h4>
-                  <h4 class="product-price">$49.99</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-              <div id="product-8" class="single-product">
-                <div class="part-1">
-                  <span class="new">new</span>
-                  <ul>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-cart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-heart-fill"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="!#">
-                        <i class="bi bi-arrows-angle-expand"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="part-2">
-                  <h3 class="product-title">Here Product Title</h3>
-                  <h4 class="product-price">$49.99</h4>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -283,4 +51,6 @@ function Card() {
   );
 }
 
-export default Card;
+export default CardProduct;
+
+
