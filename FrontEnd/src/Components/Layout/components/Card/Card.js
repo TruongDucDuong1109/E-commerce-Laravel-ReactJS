@@ -16,6 +16,7 @@ function CardProduct() {
       fetch("http://127.0.0.1:8000/api/products")
       .then((res) => {return res.json()})
       .then(response => {
+        console.log(response);
         setProducts(response.products);
       })
       .catch(error => console.log(error));

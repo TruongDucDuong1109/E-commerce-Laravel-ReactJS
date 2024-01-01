@@ -10,7 +10,6 @@ function AddProduct() {
   const [txtdescription, setdescription] = useState("");
   const [txtprice, setprice] = useState("");
   const [txtdiscount, setdiscount] = useState("");
-  // const [txtpriceafterdiscount, setpriceafterdiscount] = useState("");
   const [fileimage, setPhoto] = useState("");
   const [fileimagedetails, setPhotoDetails] = useState([]); // Thay đổi thành một mảng để chứa nhiều ảnh
   const [message, setMessage] = useState("");
@@ -21,19 +20,17 @@ function AddProduct() {
     formData.append("name", txtname);
     formData.append("description", txtdescription);
     formData.append("image", fileimage);
-    // Thêm tất cả các ảnh từ mảng vào form data
+ 
     fileimagedetails.forEach((image, index) => {
       formData.append(`imagedetails[${index}]`, image);
     });
     formData.append("price", txtprice);
-    //  const txtpriceafterdiscount = ((txtdiscount/100)*txtprice);
+    
     formData.append("discount", txtdiscount);
-    // formData.append("priceafterdiscount", txtpriceafterdiscount);
-
+    
     const response = await axios.post("http://127.0.0.1:8000/api/products", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
-
 
     if (response) {
       setMessage(response.message); //"message": "Product successfully created."
@@ -62,49 +59,69 @@ function AddProduct() {
             <p className="text-warning">{message}</p>
 
             <form onSubmit={handleSubmit}>
+              
               <div className="mb-3 row">
                 <label className="col-sm-3">Product Title </label>
                 <div className="col-sm-9">
-                  <input type="text" className="form-control" onChange={(e) => setName(e.target.value)} placeholder="Name product"/>
+                  <input
+                    type="text"
+                    className="form-control"
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Name product"
+                  />
                 </div>
               </div>
-
               <div className="mb-3 row">
                 <label className="col-sm-3">Descriptionss </label>
                 <div className="col-sm-9">
-                  <input type="text" className="form-control" onChange={(e) => setdescription(e.target.value)} placeholder="Describe your product"/>
+                  <input
+                    type="text"
+                    className="form-control"
+                    onChange={(e) => setdescription(e.target.value)}
+                    placeholder="Describe your product"
+                  />
                 </div>
               </div>
-
               <div className="mb-3 row">
                 <label className="col-sm-3">Price</label>
                 <div className="col-sm-9">
-                  <input type="text" className="form-control" onChange={(e) => setprice(e.target.value)} placeholder="$"/>
+                  <input
+                    type="text"
+                    className="form-control"
+                    onChange={(e) => setprice(e.target.value)}
+                    placeholder="$"
+                  />
                 </div>
               </div>
-
               <div className="mb-3 row">
                 <label className="col-sm-3">Discount</label>
                 <div className="col-sm-9">
-                  <input type="text" className="form-control" onChange={(e) => setdiscount(e.target.value)} placeholder="%"/>
+                  <input
+                    type="text"
+                    className="form-control"
+                    onChange={(e) => setdiscount(e.target.value)}
+                    placeholder="%"
+                  />
                 </div>
               </div>
-
-
               <div className="mb-3 row">
                 <label className="col-sm-3">Product Image</label>
                 <div className="col-sm-9">
                   <input type="file" className="form-control" onChange={(e) => setPhoto(e.target.files[0])} />
                 </div>
               </div>
-
               <div className="mb-3 row">
                 <label className="col-sm-3">Product imagedetails</label>
                 <div className="col-sm-9">
-                  <input type="file" className="form-control" onChange={handleImageDetailsChange} multiple placeholder="Select up to 4 photos"/>
+                  <input
+                    type="file"
+                    className="form-control"
+                    onChange={handleImageDetailsChange}
+                    multiple
+                    placeholder="Select up to 4 photos"
+                  />
                 </div>
               </div>
-
               <div className="mb-3 row">
                 <label className="col-sm-3"></label>
                 <div className="col-sm-9">
