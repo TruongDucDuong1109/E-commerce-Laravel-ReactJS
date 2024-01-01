@@ -1,0 +1,35 @@
+.wrapper-cart {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .section-details {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 100px;
+  }
+  .cart-container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: aqua;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    // justify-content: space-between;
+  }
+  hr {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+  }
+  .list-product {
+    float: left;
+    width: 70%;
+  }
+  .sumary {
+    float: left;
+    width: 30%;
+    margin-left: 20px;
+  }
