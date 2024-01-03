@@ -18,10 +18,8 @@ const publicRoutes = [
     {path: "addproduct", component: AddProduct, layout : SidebarOnly },
     {path: "editproduct/:id", component: EditProduct, layout : SidebarOnly },
     {path: "productdetail/:id", component: ProductDetail, layout:DefaultLayoutBasic },
-    // {path: "productdetail", component: ProductDetail, layout:DefaultLayoutBasic },
     {path: "cart", component: Cart, layout : DefaultLayoutBasic }, 
-    {path: "login", component: Login, layout : DefaultLayoutBasic },
-    {path: "register", component: Register, layout : DefaultLayoutBasic },
+    // {path: "register", component: Register, layout : DefaultLayoutBasic },
 
     
        

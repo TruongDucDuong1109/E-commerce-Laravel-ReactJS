@@ -12,6 +12,9 @@ function EditProduct() {
     description: "",
     price: "",
     discount: "",
+    size: "",
+    color: "",
+    stock: "",
     image: "",
     imagedetails: [], // Thêm trường này để lưu trữ danh sách imagedetails
   });
@@ -42,6 +45,9 @@ function EditProduct() {
       formData.append("description", inputs.description);
       formData.append("price", inputs.price);
       formData.append("discount", inputs.discount);
+      formData.append("size", inputs.size);
+      formData.append("color", inputs.color);
+      formData.append("stock", inputs.stock);
       formData.append("image", fileImage);
 
       //Thêm imagedetails vào formData
@@ -143,6 +149,42 @@ function EditProduct() {
                 </div>
               </div>
 
+              <div className="mb-3 row">
+                <label className="col-sm-3">Size</label>
+                <div className="col-sm-9">
+                  <input
+                    type="text"
+                    value={inputs.size}
+                    className="form-control"
+                    name="size"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <div className="mb-3 row">
+                <label className="col-sm-3">Color</label>
+                <div className="col-sm-9">
+                  <input
+                    type="text"
+                    value={inputs.color}
+                    className="form-control"
+                    name="color"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <div className="mb-3 row">
+                <label className="col-sm-3">Stock</label>
+                <div className="col-sm-9">
+                  <input
+                    type="text"
+                    value={inputs.stock}
+                    className="form-control"
+                    name="stock"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
               <div className="mb-3 row">
                 <label className="col-sm-3">Product Image</label>
                 <div className="col-sm-9">

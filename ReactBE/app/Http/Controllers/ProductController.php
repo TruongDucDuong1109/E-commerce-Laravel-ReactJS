@@ -48,6 +48,9 @@ class ProductController extends Controller
                 'description' => $request->description,
                 'price' => $request->price,
                 'discount' => $request->discount,
+                'size' => $request->size,
+                'color' => $request->color,
+                'stock' => $request->stock,
                 'priceafterdiscount' => $request->price - ($request->price * $request->discount / 100),
             ]);
 
@@ -85,7 +88,7 @@ class ProductController extends Controller
 
 
     public function update(ProductStoreRequest $request, $id)
-{
+{   
     try {
         // Find product
         $product = Product::find($id);
@@ -100,6 +103,9 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->discount = $request->discount;
+        $product->size = $request->size;
+        $product->color = $request->color;
+        $product->stock = $request->stock;
         $product->priceafterdiscount = $request->price - ($request->price * $request->discount / 100);
 
         // Handle main image update

@@ -17,7 +17,9 @@ return new class extends Migration
             $table->float('price')->nullable();
             $table->float('discount')->nullable();
             $table->float('priceafterdiscount')->nullable();
-            $table->integer('quantity')->nullable();
+            $table->string('size')->nullable();
+            $table->string('color')->nullable();
+            $table->integer('stock')->nullable();
             $table->timestamps();
         });
     }

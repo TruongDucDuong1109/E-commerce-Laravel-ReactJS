@@ -1,11 +1,8 @@
 import styles from "./Home.scss";
 import React, { useState, useEffect } from "react";
 import classNames from "classnames/bind";
-// import img1 from "../../Assets/banner.jpg";
 import img2 from "../../Assets/img-slide-1.jpg";
 import img3 from "../../Assets/imgfull-1.jpg";
-// import img4 from "../../Assets/img-slide-3.jpg";
-// import img5 from "../../Assets/img-slide-4.jpg";
 import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);

@@ -10,31 +10,34 @@ function AddProduct() {
   const [txtdescription, setdescription] = useState("");
   const [txtprice, setprice] = useState("");
   const [txtdiscount, setdiscount] = useState("");
+  const [txtsize, setsize] = useState("");
+  // const [txtcolor, setcolor] = useState("");
+  const [selectedColor, setSelectedColor] = useState("#000000");
+  const [txtstock, setstock] = useState("");
   const [fileimage, setPhoto] = useState("");
   const [fileimagedetails, setPhotoDetails] = useState([]); // Thay đổi thành một mảng để chứa nhiều ảnh
   const [message, setMessage] = useState("");
   const [csrfToken, setCsrfToken] = useState("");
 
   const uploadProduct = async () => {
-
     const formData = new FormData();
     formData.append("name", txtname);
     formData.append("description", txtdescription);
     formData.append("image", fileimage);
- 
+
     fileimagedetails.forEach((image, index) => {
       formData.append(`imagedetails[${index}]`, image);
     });
     formData.append("price", txtprice);
-    
+    formData.append("size", txtsize);
+    formData.append("color", selectedColor);
+    formData.append("stock", txtstock);
     formData.append("discount", txtdiscount);
-    
+
     const response = await axios.post("http://127.0.0.1:8000/api/products", formData, {
       withCredentials: false,
-      headers: { "Content-Type": "multipart/form-data" , "X-CSRF-TOKEN": csrfToken},
+      headers: { "Content-Type": "multipart/form-data", "X-CSRF-TOKEN": csrfToken },
     });
-
-
 
     if (response) {
       setMessage(response.message); //"message": "Product successfully created."
@@ -71,7 +74,7 @@ function AddProduct() {
             <p className="text-warning">{message}</p>
 
             <form onSubmit={handleSubmit}>
-            {csrfToken && <input type="hidden" name="_token" value={csrfToken} />}
+              {csrfToken && <input type="hidden" name="_token" value={csrfToken} />}
               <div className="mb-3 row">
                 <label className="col-sm-3">Product Title </label>
                 <div className="col-sm-9">
@@ -116,6 +119,42 @@ function AddProduct() {
                   />
                 </div>
               </div>
+              <div className="mb-3 row">
+                <label className="col-sm-3">Size</label>
+                <div className="col-sm-9">
+                  <input
+                    type="text"
+                    className="form-control"
+                    onChange={(e) => setsize(e.target.value)}
+                    placeholder="Size"
+                  />
+                </div>
+              </div>
+              <div className="mb-3 row">
+                <label className="col-sm-3">Stock</label>
+                <div className="col-sm-9">
+                  <input
+                    type="text"
+                    className="form-control"
+                    onChange={(e) => setstock(e.target.value)}
+                    placeholder="stock"
+                  />
+                </div>
+              </div>
+              <div className="mb-3 row">
+                <label className="col-sm-3">color</label>
+                <div className="col-sm-9 color-picker" >
+                  <input
+                    type="color"
+                    className="form-control"
+                    onChange={(e) => setSelectedColor(e.target.value)}
+                    placeholder="color"
+                  />
+                  <div className="color-indicator" style={{ backgroundColor: selectedColor }}></div>
+                </div>
+              </div>
+
+              
               <div className="mb-3 row">
                 <label className="col-sm-3">Product Image</label>
                 <div className="col-sm-9">

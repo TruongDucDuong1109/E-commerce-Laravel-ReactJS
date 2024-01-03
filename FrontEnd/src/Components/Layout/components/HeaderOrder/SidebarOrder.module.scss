@@ -5,7 +5,7 @@
 
 .sidebar_container {
   float: left;
-  background-color: rgb(184, 201, 186);
+  background-color: rgb(255, 255, 255);
   width: 100%;
   min-height: 100vh;
 }
@@ -38,7 +38,7 @@
   
 }
 .box_content:hover {
-  background-color: rgb(245, 235, 235);
+  background-color: rgb(200, 190, 190);
   color: black;
   cursor: pointer;
   padding: 5px;
@@ -62,4 +62,24 @@
   font-weight: 500;
   justify-content: space-between;
   align-items: center;
+}
+
+.btn_back {
+
+  border: none;
+  width: 150px;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+  
+}
+
+.btn_back:hover {
+  color: rgb(226, 49, 49);
+  cursor: pointer;
+  border-radius: 5px;
 }

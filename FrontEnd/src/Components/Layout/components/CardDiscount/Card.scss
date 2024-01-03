@@ -1,0 +1,29 @@
+.Card_product {
+    margin-bottom: 20px;
+    border: none !important;
+}
+
+.Card_title {
+    font-size: 10px ;
+    font-weight: 300 ;
+    margin-bottom: 10px;
+}
+
+.Card_text {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.Card_image {
+    width: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 0; 
+}
+.discount {
+    color: red;
+}
+.price {
+    text-decoration: line-through;
+}

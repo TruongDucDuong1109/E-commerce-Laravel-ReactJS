@@ -1,12 +1,13 @@
 import styles from "./SidebarOrder.module.scss";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
 
 function Sidebar() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("sidebar_container")}>
-          <div className={cx("logo_sidebar")}><a href="/">FashionFits</a></div>
+          <div className={cx("logo_sidebar")}><a href="/" className={cx("btn_back")}><i class="bi bi-arrow-left"></i>Back to Home</a></div>
           <hr className={cx("line")} />
           <div className={cx("sidebar_content")}>
             <div className= {cx("box_content")}>

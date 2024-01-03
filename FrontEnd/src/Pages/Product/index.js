@@ -6,7 +6,7 @@ import styles from "./Product.scss";
 import classNames from "classnames/bind";
 import CardProduct from "../../Components/Layout/components/Card/Card";
 import imgBanner from "../../Assets/banner1.jpg";
-
+import CardDiscount from "../../Components/Layout/components/CardDiscount/CardDiscount";
 const cx = classNames.bind(styles);
 
 function Product() {
@@ -26,13 +26,24 @@ function Product() {
               <div className="col-md-8 col-lg-6">
                 <div className={cx("header")}>
                   <h3>Featured Product</h3>
-                  <h2>Popular Products</h2>
+                  <h2>Outstanding products</h2>
                 </div>
               </div>
             </div>
             <div class="row">
-               <CardProduct />
+               <CardDiscount />
           </div>
+          <div className="row justify-content-center text-center mt-5">
+              <div className="col-md-8 col-lg-6">
+                <div className={cx("header")}>
+                  <h3>Featured Product</h3>
+                  <h2>Discounted products</h2>
+                </div>
+              </div>
+            </div>
+          <div class= "row">
+            <CardProduct />
+             </div>
           </div>
         </div>
       </section>

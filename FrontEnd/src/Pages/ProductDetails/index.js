@@ -57,8 +57,7 @@ function ProductDetail({product}) {
           <div className={cx("about")}>
             <span className={cx("about-title")}>About the Product</span> <br /> <br />
             <span className={cx("descriptions-details")}>
-              An iconic essential, our reimagined jeans are made with signature logo accents, a Calvin Klein hallmark.
-              Cut in a standard straight fit with considered detailing and reinforced seams.
+              {inputs.description}
             </span>
           </div>
         </article>
@@ -66,7 +65,7 @@ function ProductDetail({product}) {
           <div className={cx("detailsright")}>
             <span className={cx("detailsright-title")}>{inputs.name}</span>
             <span className={cx("detailsright-price", "text-details")}>
-              {inputs.price} <span className={cx("sell")}>{inputs.discount}% off</span>{" "}
+              {inputs.price}$ <span className={cx("sell")}>{inputs.discount}% off</span>{" "}
             </span>
             <span className={cx("detailsright-color", "text-details")}> Color: </span>
             <div className={cx("btn-change-color")}>
