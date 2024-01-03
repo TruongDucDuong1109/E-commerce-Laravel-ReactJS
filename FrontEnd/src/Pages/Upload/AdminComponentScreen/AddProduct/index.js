@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
@@ -13,9 +13,10 @@ function AddProduct() {
   const [fileimage, setPhoto] = useState("");
   const [fileimagedetails, setPhotoDetails] = useState([]); // Thay đổi thành một mảng để chứa nhiều ảnh
   const [message, setMessage] = useState("");
+  const [csrfToken, setCsrfToken] = useState("");
 
   const uploadProduct = async () => {
-    console.log("da vao");
+
     const formData = new FormData();
     formData.append("name", txtname);
     formData.append("description", txtdescription);
@@ -29,8 +30,11 @@ function AddProduct() {
     formData.append("discount", txtdiscount);
     
     const response = await axios.post("http://127.0.0.1:8000/api/products", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
+      withCredentials: false,
+      headers: { "Content-Type": "multipart/form-data" , "X-CSRF-TOKEN": csrfToken},
     });
+
+
 
     if (response) {
       setMessage(response.message); //"message": "Product successfully created."
@@ -50,6 +54,14 @@ function AddProduct() {
     const selectedImages = Array.from(e.target.files);
     setPhotoDetails(selectedImages);
   };
+
+  useEffect(() => {
+    // Fetch CSRF token from the meta tag
+    const metaCsrfToken = document.head.querySelector('meta[name="csrf-token"]');
+    if (metaCsrfToken) {
+      setCsrfToken(metaCsrfToken.content);
+    }
+  }, []);
   return (
     <React.Fragment>
       <div className="container">
@@ -59,7 +71,7 @@ function AddProduct() {
             <p className="text-warning">{message}</p>
 
             <form onSubmit={handleSubmit}>
-              
+            {csrfToken && <input type="hidden" name="_token" value={csrfToken} />}
               <div className="mb-3 row">
                 <label className="col-sm-3">Product Title </label>
                 <div className="col-sm-9">

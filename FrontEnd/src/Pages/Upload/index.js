@@ -29,7 +29,8 @@ function Upload() {
   const deleteProduct = (id) => {
     axios.delete("http://127.0.0.1:8000/api/productsdelete/" + id).then(function (response) {
       console.log(response.data);
-      alert("Successfully Deleted, please refresh the page");
+      // alert("Successfully Deleted, please refresh the page");
+      window.location.reload();
      
     });
   };

@@ -6,6 +6,7 @@ import img2 from "../../Assets/img-slide-1.jpg";
 import img3 from "../../Assets/imgfull-1.jpg";
 // import img4 from "../../Assets/img-slide-3.jpg";
 // import img5 from "../../Assets/img-slide-4.jpg";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 function Home() {
@@ -28,7 +29,9 @@ function Home() {
         </figure>
         <div className={cx("text-fixed")}>
           <span className={cx("banner-text")}>D2 HORSEBIT 1995 IN DEMETRA</span>
-          <button className={cx("btn-banner-discover")}>SHOP NOW</button>
+          <Link to="/product" className={cx("btn-banner-discover")}>
+           SHOP NOW
+          </Link>  
         </div>
       </section>
       <section>

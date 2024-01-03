@@ -38,7 +38,7 @@ function Header() {
           <li>
             <a href="product">
               <i className={cx("bi bi-list", "icon", { toggleTextHeader: scrolled })}></i>
-              <span className={cx("text-icon", { toggleTextHeader: scrolled })}>Menu</span>
+              <span className={cx("text-icon", { toggleTextHeader: scrolled })}>Category</span>
             </a>
           </li>
           <li>

@@ -66,7 +66,7 @@ function ProductDetail({product}) {
           <div className={cx("detailsright")}>
             <span className={cx("detailsright-title")}>{inputs.name}</span>
             <span className={cx("detailsright-price", "text-details")}>
-              {inputs.price} <span className={cx("sell")}>30% off</span>{" "}
+              {inputs.price} <span className={cx("sell")}>{inputs.discount}% off</span>{" "}
             </span>
             <span className={cx("detailsright-color", "text-details")}> Color: </span>
             <div className={cx("btn-change-color")}>
@@ -95,7 +95,7 @@ function ProductDetail({product}) {
                   <option value="3">Three</option>
                 </Form.Select>
               </div>
-              <button className={cx("btn-addcart")} onClick={handleAddToCart}>Add to Cart - $62.54</button>
+              <button className={cx("btn-addcart")} onClick={handleAddToCart}>Add to Cart - ${inputs.priceafterdiscount}</button>
             </div>
 
             {/* <span className={cx("detailsright-related")}>Related products</span>
