@@ -10,10 +10,6 @@ function Header() {
   const [openModal, setOpenModal] = useState(false);
 
 
-  //console.log(data);
-
-  
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -42,11 +38,11 @@ function Header() {
             </a>
           </li>
           <li>
-            <a onClick={() => {setOpenModal(true)}}>
+            <a onClick={() => { setOpenModal(true) }}>
               <i className={cx("bi bi-search", "icon", { toggleTextHeader: scrolled })}></i>
               <span className={cx("text-icon", { toggleTextHeader: scrolled })}>Search</span>
             </a>
-            {openModal && <ModalSearch closeModal={setOpenModal}/>}
+            {openModal && <ModalSearch closeModal={setOpenModal} />}
 
           </li>
         </ul>
@@ -65,7 +61,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="productdetail">
+            <a href="cart">
               <i className={cx("bi bi-cart", "icon", { toggleTextHeader: scrolled })}></i>
               <span className={cx("text-icon", { toggleTextHeader: scrolled })}>Cart</span>
             </a>
