@@ -24,14 +24,14 @@ function Product() {
             <div className="col-md-8 col-lg-6">
               <div className={cx("header")}>
                 <h3>Featured Product</h3>
-                <h2>Discounted products</h2>
+                <h2>Outstanding products</h2>
               </div>
             </div>
           </div>
           <div class="row">
             <CardProduct />
           </div>
-          <div className="row justify-content-around">
+          {/* <div className="row justify-content-around">
             <div className="row justify-content-center text-center mt-5">
               <div className="col-md-8 col-lg-6">
                 <div className={cx("header")}>
@@ -43,7 +43,7 @@ function Product() {
             <div class="row">
               <CardDiscount />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

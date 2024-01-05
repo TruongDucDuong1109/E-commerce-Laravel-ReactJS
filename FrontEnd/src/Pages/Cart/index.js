@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 function Cart() {
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [deleteProduct, setDeleteProduct] = useState(false); // [1]
   const [csrfToken, setCsrfToken] = useState("");
 
   useEffect(() => {
@@ -34,7 +35,7 @@ function Cart() {
         });
     };
     getCart();
-  }, []);
+  }, [deleteProduct]);
 
   const removeItem = async (id) => {
     const product_cart_id = id;
@@ -43,11 +44,13 @@ function Cart() {
       withCredentials: false,
       headers: { "Content-Type": "multipart/form-data", "X-CSRF-TOKEN": csrfToken },
     })
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res);
+        setDeleteProduct(!deleteProduct);
+      })
       .catch((err) => console.error(err.response.data, err.response.status, err.response.headers))
   }
-
-
+  console.log(deleteProduct)
   return (
     <div className={cx("wrapper-cart")}>
       <section className={cx("section-details")}>
@@ -70,7 +73,7 @@ function Cart() {
                 </tr>
               </thead>
               <tbody>
-                {!loading ? cart.map((product, index) => (
+                {cart.length > 0 ? cart.map((product, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>
@@ -84,8 +87,7 @@ function Cart() {
                       <button className="btn btn-danger" onClick={() => removeItem(product.id)}>Remove</button>
                     </td>
                   </tr>
-                )) : <tr><td colSpan={7} className={cx('font')}>No product in cart</td></tr>
-                }
+                )) : <tr><td colSpan={7} className={cx('font')}>No product in cart</td></tr>}
               </tbody>
             </Table>
           </div>

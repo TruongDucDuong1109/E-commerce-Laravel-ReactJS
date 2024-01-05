@@ -9,7 +9,7 @@ import classNames from "classnames/bind";
 import Form from "react-bootstrap/Form";
 const cx = classNames.bind(styles);
 
-function ProductDetail({product}) {
+function ProductDetail({ product }) {
   const navigate = useNavigate();
   const { id } = useParams();
   const [inputs, setInputs] = useState({ imagedetails: [] });
@@ -19,40 +19,43 @@ function ProductDetail({product}) {
   }, []);
 
   function getproduct() {
-    axios.get("http://127.0.0.1:8000/api/products/" + id).then(function (response) {
-      setInputs(response.data.product);
-    });
+    axios.get(`http://127.0.0.1:8000/api/products/${id}`)
+      .then(function (response) {
+        console.log(response.data.product);
+        setInputs(response.data.product);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   const handleAddToCart = async () => {
     try {
-        const response = await axios.post('/api/cart/add', {
-            product_id: product.id,
-            quantity: 1, 
-        });
-        console.log(response.data.message);
-        console.log("da duoc them")
-        // Add logic to update the UI or show a success message to the user
+      const response = await axios.post('/api/cart/add', {
+        product_id: product.id,
+        quantity: 1,
+      });
+      console.log(response.data.message);
+      console.log("da duoc them")
+      // Add logic to update the UI or show a success message to the user
     } catch (error) {
-        console.error('Error adding product to cart', error);
-        // Add logic to handle errors
+      console.error('Error adding product to cart', error);
+      // Add logic to handle errors
     }
-};
+  };
 
   return (
     <div className={cx("wrapper-product-details")}>
       <section className={cx("section-details")}>
         <article className={cx("details-left")}>
           <div className={cx("row")}>
-            {inputs.imagedetails.map((detail) => (
-              <Figure className={cx("column")}>
-                <Figure.Image
-                  alt="500x500"
-                  src={`http://127.0.0.1:8000/storage/${detail}`}
-                  className={cx("img-details")}
-                />
-              </Figure>
-            ))}
+            <Figure className={cx("column")}>
+              <Figure.Image
+                alt="500x500"
+                src={inputs.image}
+                className={cx("img-details")}
+              />
+            </Figure>
           </div>
           <div className={cx("about")}>
             <span className={cx("about-title")}>About the Product</span> <br /> <br />

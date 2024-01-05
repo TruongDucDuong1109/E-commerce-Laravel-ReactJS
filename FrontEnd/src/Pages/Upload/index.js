@@ -12,6 +12,7 @@ function Upload() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [product, setproduct] = useState([]);
   const navigate = useNavigate();
   const discountedProducts = product.filter((pdata) => parseFloat(pdata.discount) > 0);
@@ -39,6 +40,7 @@ function Upload() {
         .then((response) => {
           console.log("response", response.products);
           setproduct(response.products);
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error);
@@ -60,7 +62,7 @@ function Upload() {
       <div className="container container_overflow">
         <div className="row">
           <div className="col-12">
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label className="form-label textSearch">Search Product</label>
               <input
                 type="text"
@@ -68,9 +70,9 @@ function Upload() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-            </div>
+            </div> */}
 
-            {showSearchResults && searchResults.length > 0 && (
+            {/* {showSearchResults && searchResults.length > 0 && (
               <div>
                 <h6 className={cx("textSearch")}>Search Results:</h6>
                 <table className={cx("table", "table-warning", "table-bordered")}>
@@ -144,9 +146,9 @@ function Upload() {
                 </table>
               </div>
             )}
-            <h5 className="mb-4">Discounted Products</h5>
+            <h5 className="mb-4">Discounted Products</h5> */}
 
-            <table className="table table-bordered table-light">
+            {/* <table className="table table-bordered table-light">
               <thead>
                 <tr>
                   <th scope="col">Sr.No</th>
@@ -213,7 +215,7 @@ function Upload() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table> */}
             <h5 className="mb-4">Product List</h5>
 
             <table className="table table-bordered table-light">
@@ -240,7 +242,7 @@ function Upload() {
                 </tr>
               </thead>
               <tbody>
-                {product.map((pdata, index) => (
+                {product.length > 0 ? product.map((pdata, index) => (
                   <tr key={index}>
                     <td>{index + 1} </td>
                     <td>{pdata.name} </td>
@@ -255,7 +257,7 @@ function Upload() {
                       ></div>
                     </td>
                     <td>{pdata.stock}</td>
-                    <td className={cx("image-details-cell")}>
+                    {/* <td className={cx("image-details-cell")}>
                       {pdata.imagedetails.map((detail, detailIndex) => (
                         <img
                           key={detailIndex}
@@ -264,10 +266,10 @@ function Upload() {
                           className={cx("image-detail")}
                         />
                       ))}
-                    </td>
+                    </td> */}
                     <td>
                       <img
-                        src={`http://127.0.0.1:8000/storage/${pdata.image}`}
+                        src={`http://127.0.0.1:8000/storage/${pdata.image}` || pdata.image}
                         alt=""
                         className={cx("image-product")}
                       />
@@ -281,7 +283,7 @@ function Upload() {
                       </button>
                     </td>
                   </tr>
-                ))}
+                )) : <tr><td colSpan="12" className="text-center">No Products Found</td></tr>}
               </tbody>
             </table>
           </div>
